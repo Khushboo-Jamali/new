@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    .hero {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      background-image: url(./background.jpg);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .ocean {
+      height: 220px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+    }
+    .water {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      animation: water 10s linear infinite;
+    }
+    @keyframes water {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(1000px);
+      }
+    }
+    .boat {
+      width: 350px;
+      position: absolute;
+      bottom: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .boat img {
+      width: 100%;
+      -webkit-box-reflect: below 0
+        linear-gradient(rgba(255, 225, 255, 0.1), rgba(255, 225, 255, 0.6));
+      animation: boat 2s linear infinite;
+    }
+    @keyframes boat {
+      0% {
+        transform: rotate(0deg) translateY(0);
+      }
+      25% {
+        transform: rotate(-1deg) translateY(-3px);
+      }
+      50% {
+        transform: rotate(0deg) translateY(-5px);
+      }
+      75% {
+        transform: rotate(1deg) translateY(-3px);
+      }
+      100% {
+        transform: rotate(0deg) translateY(0);
+      }
+    }
+    .cloud {
+      height: 250px;
+      position: absolute;
+      right: 0;
+      animation: cloud 10s linear infinite;
+    }
+    @keyframes cloud {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(500px);
+      }
+    }
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(60deg, #e67e22, #48dbfb, #e74c3c);
+      min-height: 100vh;
+    }
+    .container {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 100px 50px;
+      padding: 100px 50px;
+    }
+    .container .card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      width: 350px;
+      height: 300px;
+      background-color: #fff;
+      border-radius: 20px;
+      transition: 0.5s;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    }
+    .container .card:hover {
+      height: 400px;
+    }
+    .container .card .imgbox {
+      position: absolute;
+      top: 20px;
+      width: 300px;
+      height: 220px;
+      background: #333;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: 0.5s;
+    }
+    .container .card:hover .imgbox {
+      top: -100px;
+      scale: 0.75;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 2);
+    }
+
+    .container .card .imgbox img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .container .card .content {
+      position: absolute;
+      top: 252px;
+      width: 100%;
+      padding: 0 30px;
+      height: 35px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.5s;
+    }
+    .container .card:hover .content {
+      height: 250px;
+      top: 130px;
+    }
+    .container .card .content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #009688;
+    }
+    .container .card .content p {
+      color: #333;
+    }
+    .container .card .content a {
+      position: relative;
+      top: 15px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #00bcd4;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+  </style>
+  <body>
+    <div class="hero">
+      <img src="./cloud.png" class="cloud" />
+      <div class="ocean">
+        <img src="./water.png" class="water" />
+        <div class="boat">
+          <img src="./boat.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card" style="--clr: var(#009688)">
+        <div class="imgbox"><img src="./images/img1.jpg" alt="" /></div>
+        <div class="content">
+          <h2>Vegetable Names</h2>
+          <p>
+            Flower Vegetables. Cauliflower. Broccoli. Artichokes. Leafy
+            Vegetables. Cabbage. Spinach. Lettuce. Coriander. ... Root
+            Vegetables. Carrot. Turnip. Radish. Beetroot. Tuber Vegetables.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="card" style="--clr: var(#ff3e7f)">
+        <div class="imgbox"><img src="./images/img2.jpg" alt="" /></div>
+        <div class="content">
+          <h2>Shapes Names</h2>
+          <p>
+            Words on the chart: Circle, Semi circle, Oval, Square, Rectangle,
+            Diamond, Right triangle, Triangle, Rhombus,cross,Pentagon,Hexagon,
+            Heptagon,Octagon, Star, Decagon, Dodecagon, Parallelogram,
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="card" style="--clr: var(#03a9f4)">
+        <div class="imgbox"><img src="./images/img3.jpg" alt="" /></div>
+        <div class="content">
+          <h2>Animals Names</h2>
+          <p>
+            A polar bear's hair is not white – it's colourless. ... A giraffe
+            has seven bones in its neck, which is the same as a human has, but
+            they are much larger. The pattern of wrinkles on a gorilla's nose is
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
